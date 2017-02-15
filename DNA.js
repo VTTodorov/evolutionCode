@@ -1,7 +1,7 @@
 function DNA(genes){
   this.genes = [];
   this.fitness = 0;
-  this.max = 22;
+  this.max = 18;
   if (genes) {
     this.genes = genes;
   } else {

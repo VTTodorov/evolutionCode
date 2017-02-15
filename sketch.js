@@ -14,9 +14,9 @@ function setup() {
 
 function draw() {
 
-  population.calcFitness("maika ti da iba stoene");
+  population.calcFitness("I am evolving code");
   population.naturalSelection();
-  population.calcFitness("maika ti da iba stoene");
+  population.calcFitness("I am evolving code");
   population.population.forEach(function (member) {
     if (member.fitness > topScore) {
     topScore = member.fitness;
