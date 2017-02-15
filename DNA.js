@@ -38,7 +38,7 @@ function DNA(genes){
     //mutation
     newGenes.forEach(function (char) {
       if (random() < 0.1) {
-        if(random() < 0.0 1 )
+        if(random() < 0.01 )
         {
           newGenes[newGenes.indexOf(char) - 1] = newChar();
           newGenes[newGenes.indexOf(char)] = newChar();
