@@ -1,7 +1,7 @@
 function DNA(genes){
   this.genes = [];
   this.fitness = 0;
-  this.max = 18;
+  this.max = 21;
   if (genes) {
     this.genes = genes;
   } else {
@@ -18,10 +18,11 @@ function DNA(genes){
       if( this.genes[i] == target.charAt(i) ){
         score++;
       }
-      this.fitness = floor((score / target.length)*100);
     }
-    if (this.fitness == 100) {
-    }
+    score = (score*score)/(this.max*this.max)*100;
+    console.log(score);
+    this.fitness = score;
+    // this.fitness = floor(map(Math.pow(2,score),0,Math.pow(2,this.max),0,100));
   }
 
   this.crossover = function (partner) {
@@ -36,18 +37,19 @@ function DNA(genes){
       }
     }
     //mutation
-    newGenes.forEach(function (char) {
-      if (random() < 0.1) {
-        if(random() < 0.01 )
-        {
-          newGenes[newGenes.indexOf(char) - 1] = newChar();
-          newGenes[newGenes.indexOf(char)] = newChar();
-          newGenes[newGenes.indexOf(char) + 1] = newChar();
-        } else {
-          char = newChar();
-        }
-      }
-    });
+    for (var i = 0; i < newGenes.length; i++) {
+      var r = random();
+      if (r < 0.01) {
+        // if(r < 0.005 )
+        // {
+        //   newGenes[newGenes.indexOf(char) - 1] = newChar();
+        //   newGenes[newGenes.indexOf(char)] = newChar();
+        //   newGenes[newGenes.indexOf(char) + 1] = newChar();
+        // } else {
+          newGenes[i] = newChar();
+        // }
+    }
+  }
     return newGenes;
   }
 }

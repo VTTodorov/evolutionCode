@@ -7,20 +7,20 @@ function setup() {
   population = new Population();
   population.generate();
   topParagraph = createP();
-  for (var i = 0; i < 1000; i++) {
+  for (var i = 0; i < 2000; i++) {
     paragraphs.push(createP());
   }
 }
 
 function draw() {
 
-  population.calcFitness("I am evolving code");
+  population.calcFitness("I am an evolving code");
   population.naturalSelection();
-  population.calcFitness("I am evolving code");
+  population.calcFitness("I am an evolving code");
   population.population.forEach(function (member) {
     if (member.fitness > topScore) {
     topScore = member.fitness;
-    topParagraph.elt.innerHTML = member.genes.join("");
+    topParagraph.elt.innerHTML = member.genes.join("") + " " + member.fitness + "%";
     }
     if (member.fitness == 100) {
        topParagraph.elt.innerHTML = member.genes.join("");

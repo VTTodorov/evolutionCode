@@ -1,6 +1,6 @@
 function Population(){
   this.population = [];
-  this.max = 1000;
+  this.max = 2000;
   this.matingPool = [];
   this.newPopulation = [];
 
@@ -45,7 +45,6 @@ function Population(){
       for (var j = 0; j < this.population[i].fitness; j++) {
         this.matingPool.push(this.population[i]);
       }
-      console.log(maxFitness);
     }
 
     for (var i = 0; i < this.population.length; i++) {
